@@ -1,4 +1,4 @@
-# DiagnosticQuizz<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,11 @@
             font-family: 'Inter', sans-serif;
             background-color: #fdfbf7;
             color: #3d3d3d;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
         h1, h2, h3, .serif {
             font-family: 'Bodoni Moda', serif;
@@ -18,6 +23,7 @@
         .option-btn {
             transition: all 0.3s ease;
             border: 1px solid #e5e7eb;
+            cursor: pointer;
         }
         .option-btn:hover {
             border-color: #c5a67c;
@@ -36,9 +42,9 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body>
 
-    <div id="quiz-container" class="max-w-2xl w-full bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 relative">
+    <div id="quiz-container" class="max-w-2xl w-full bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 m-4 relative">
         <!-- Header -->
         <div id="quiz-header" class="text-center mb-8">
             <span class="text-xs uppercase tracking-widest text-stone-400 mb-2 block">Voyage Intérieur</span>
@@ -58,20 +64,20 @@
 
         <!-- Result Area (Hidden by default) -->
         <div id="result-box" class="hidden fade-in text-center">
-            <div id="element-icon" class="text-5xl mb-4"></div>
+            <div id="element-icon" class="text-6xl mb-4"></div>
             <h2 id="result-title" class="text-3xl mb-4 text-stone-800"></h2>
-            <p id="result-archetype" class="italic text-stone-500 mb-6"></p>
-            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-8 p-6 bg-stone-50 rounded-2xl"></div>
+            <p id="result-archetype" class="italic text-stone-500 mb-6 font-serif text-lg"></p>
+            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-8 p-6 bg-stone-50 rounded-2xl border border-stone-100"></div>
             
             <div class="border-t border-stone-100 pt-8 mt-8">
-                <p class="text-sm text-stone-500 mb-4">Ton paysage intérieur se dessine...</p>
-                <h3 class="serif text-xl mb-6 text-stone-800">Reçois ton Oracle de Saison complet</h3>
-                <form id="capture-form" class="space-y-4">
-                    <input type="text" placeholder="Ton prénom" required class="w-full px-4 py-3 rounded-lg border border-stone-200 focus:outline-none focus:ring-1 focus:ring-stone-400">
-                    <input type="email" placeholder="Ton e-mail" required class="w-full px-4 py-3 rounded-lg border border-stone-200 focus:outline-none focus:ring-1 focus:ring-stone-400">
-                    <button type="submit" class="w-full bg-stone-800 text-white py-4 rounded-lg hover:bg-stone-700 transition shadow-lg uppercase tracking-widest text-sm">Recevoir mon Guide PDF</button>
+                <p class="text-sm text-stone-500 mb-2 italic">Ton paysage intérieur se dessine...</p>
+                <h3 class="serif text-2xl mb-6 text-stone-800">Reçois ton Oracle de Saison complet</h3>
+                <form id="capture-form" class="space-y-4 max-w-sm mx-auto">
+                    <input type="text" placeholder="Ton prénom" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-1 focus:ring-stone-400">
+                    <input type="email" placeholder="Ton e-mail" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-1 focus:ring-stone-400">
+                    <button type="submit" class="w-full bg-stone-800 text-white py-4 rounded-xl hover:bg-stone-700 transition shadow-lg uppercase tracking-widest text-sm font-semibold mt-2">Recevoir mon Guide PDF</button>
                 </form>
-                <p class="text-xs text-stone-400 mt-6">Tes données sont protégées dans notre temple numérique, tu pourras te désinscrire d'un simple souffle.</p>
+                <p class="text-xs text-stone-400 mt-8">Tes données sont protégées dans notre temple numérique,<br>tu pourras te désinscrire d'un simple souffle.</p>
             </div>
         </div>
     </div>
@@ -205,31 +211,31 @@
                 title: "L'Élan du BOIS",
                 icon: "🌿",
                 archetype: "La Visionnaire, l'Amazone",
-                content: "Tu portes en toi l'énergie du Printemps, une sève montante qui demande à créer, décider et avancer. Ton super-pouvoir est ta vision du futur. <br><br><strong>Conseil :</strong> Libère tes tensions en massant le point Taichong sur tes pieds et privilégie les saveurs acidulées."
+                content: "Tu portes en toi l'énergie du Printemps, une sève montante qui demande à créer, décider et avancer. Ton super-pouvoir est ta vision du futur. <br><br><strong>Rituels :</strong> Libère tes tensions en massant le point Taichong sur tes pieds et privilégie les saveurs acidulées."
             },
             B: {
                 title: "La Flamme du FEU",
                 icon: "🔥",
                 archetype: "L'Impératrice, l'Amoureuse",
-                content: "Tu vibres à la fréquence de l'Été. Tu es faite pour la connexion, la joie et l'expression. Tu réchauffes ton entourage par ta simple présence. <br><br><strong>Conseil :</strong> Apaise ton cœur avec un peu d'amertume (cacao noir) et stimule le point Shenmen pour calmer l'agitation."
+                content: "Tu vibres à la fréquence de l'Été. Tu es faite pour la connexion, la joie et l'expression. Tu réchauffes ton entourage par ta simple présence. <br><br><strong>Rituels :</strong> Apaise ton cœur avec un peu d'amertume (cacao noir) et stimule le point Shenmen pour calmer l'agitation."
             },
             C: {
                 title: "Le Socle de la TERRE",
                 icon: "🏺",
                 archetype: "La Mère Nourricière, la Gardienne",
-                content: "Tu incarnes l'Intersaison, la récolte et la stabilité. Ta force réside dans ta capacité à soutenir et harmoniser les liens. <br><br><strong>Conseil :</strong> Reviens à toi avec des aliments orangés et stimule le point Zusanli pour renforcer ton ancrage."
+                content: "Tu incarnes l'Intersaison, la récolte et la stabilité. Ta force réside dans ta capacité à soutenir et harmoniser les liens. <br><br><strong>Rituels :</strong> Reviens à toi avec des aliments orangés et stimule le point Zusanli pour renforcer ton ancrage."
             },
             D: {
                 title: "Le Joyau du MÉTAL",
                 icon: "✨",
                 archetype: "L'Alchimiste, la Sage",
-                content: "Tu es l'Automne, le moment où l'essentiel se révèle. Tu cherches la pureté et la clarté. Tu sais trancher pour garder ce qui a de la valeur. <br><br><strong>Conseil :</strong> Respire avec le point Hegu et mise sur les aliments blancs pour nourrir tes poumons."
+                content: "Tu es l'Automne, le moment où l'essentiel se révèle. Tu cherches la pureté et la clarté. Tu sais trancher pour garder ce qui a de la valeur. <br><br><strong>Rituels :</strong> Respire avec le point Hegu et mise sur les aliments blancs pour nourrir tes poumons."
             },
             E: {
                 title: "La Source de l'EAU",
                 icon: "💧",
                 archetype: "La Mystique, la Femme Sauvage",
-                content: "Tu portes l'énergie de l'Hiver, celle des profondeurs et de l'intuition. Tu sais écouter le silence et voir au-delà du visible. <br><br><strong>Conseil :</strong> Recharge tes réserves avec des aliments noirs et frictionne tes plantes de pieds (Yongquan)."
+                content: "Tu portes l'énergie de l'Hiver, celle des profondeurs et de l'intuition. Tu sais écouter le silence et voir au-delà du visible. <br><br><strong>Rituels :</strong> Recharge tes réserves avec des aliments noirs et frictionne tes plantes de pieds (point Yongquan)."
             }
         };
 
@@ -244,7 +250,7 @@
             
             q.options.forEach(opt => {
                 const btn = document.createElement('button');
-                btn.className = "option-btn w-full text-left p-5 rounded-2xl bg-white hover:shadow-md text-stone-700";
+                btn.className = "option-btn w-full text-left p-5 rounded-2xl bg-white hover:shadow-md text-stone-700 font-light";
                 btn.innerText = opt.t;
                 btn.onclick = () => selectOption(opt.e);
                 container.appendChild(btn);
@@ -261,7 +267,7 @@
             if (currentQuestion < quizData.length) {
                 const box = document.getElementById('question-box');
                 box.classList.remove('fade-in');
-                void box.offsetWidth; // trigger reflow
+                void box.offsetWidth; 
                 box.classList.add('fade-in');
                 loadQuestion();
             } else {
@@ -275,7 +281,6 @@
             const resultBox = document.getElementById('result-box');
             resultBox.classList.remove('hidden');
 
-            // Find dominant element
             let dominant = 'A';
             for (let e in scores) {
                 if (scores[e] > scores[dominant]) dominant = e;
@@ -294,9 +299,6 @@
             btn.innerText = "Invitation envoyée...";
             btn.disabled = true;
             btn.style.backgroundColor = "#a8a29e";
-            setTimeout(() => {
-                alert("Merci de ta confiance. Ton Oracle arrive dans ton écrin mail.");
-            }, 500);
         };
 
         loadQuestion();
