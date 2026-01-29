@@ -34,12 +34,31 @@
             from { opacity: 0; transform: translateY(10px); } 
             to { opacity: 1; transform: translateY(0); } 
         }
+        .tao-button {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: #ffffff !important;
+            padding: 18px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .tao-button:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
 
     <div id="quiz-container" class="max-w-2xl w-full bg-white rounded-3xl shadow-xl p-8 md:p-12 m-4 relative">
-        <!-- En-tête -->
         <div id="quiz-header" class="text-center mb-8">
             <span class="text-xs uppercase tracking-widest text-stone-400 mb-2 block">Souffle Tao</span>
             <h1 class="text-3xl md:text-4xl text-stone-800">Quel est ton élément ?</h1>
@@ -48,29 +67,11 @@
             </div>
         </div>
 
-        <!-- Zone Questionnaire -->
         <div id="question-box" class="fade-in">
             <h3 id="question-text" class="text-xl md:text-2xl mb-8 leading-relaxed text-stone-700"></h3>
             <div id="options-container" class="space-y-4"></div>
         </div>
 
-        <!-- Écran de capture d'email -->
-        <div id="capture-box" class="hidden fade-in text-center">
-            <div class="text-5xl mb-6">✨</div>
-            <h2 class="serif text-3xl mb-4 text-stone-800">Ton profil est prêt...</h2>
-            <p class="text-stone-600 mb-8 leading-relaxed">
-                Inscris ton e-mail pour <strong>débloquer ton résultat</strong> et accéder à ton <strong>Oracle de Saison</strong> complet (PDF de 15 pages).
-            </p>
-            <div class="space-y-4 max-w-sm mx-auto">
-                <input type="email" id="user-email" placeholder="Ton adresse e-mail" required class="w-full px-4 py-4 rounded-xl border border-stone-200 focus:outline-none focus:ring-1 focus:ring-stone-400 text-center text-lg">
-                <button onclick="revealResult()" class="w-full bg-stone-800 text-white py-4 rounded-xl hover:bg-stone-700 transition shadow-lg uppercase tracking-widest text-sm font-semibold">Découvrir mes éléments</button>
-            </div>
-            <p class="text-[10px] text-stone-400 mt-8 italic uppercase tracking-tighter">
-                En validant, tu acceptes de recevoir mes rituels taoïstes par e-mail.
-            </p>
-        </div>
-
-        <!-- Zone des Résultats -->
         <div id="result-box" class="hidden fade-in text-center">
             <div id="element-icon" class="text-7xl mb-4"></div>
             <h2 id="result-title" class="text-3xl mb-2 text-stone-800 uppercase tracking-widest"></h2>
@@ -80,15 +81,13 @@
                 <p id="result-summary" class="text-base"></p>
             </div>
             
-            <div class="bg-stone-800 text-white p-8 rounded-2xl mb-6 shadow-inner">
-                <p class="serif text-xl mb-4 italic">"Ton Oracle t'attend..."</p>
+            <div class="bg-stone-100 p-8 rounded-2xl mb-6 border-2 border-dashed border-stone-200">
+                <p class="serif text-xl mb-2 text-stone-800 italic">"Votre Oracle est prêt."</p>
+                <p class="text-sm text-stone-500 mb-6">Pour recevoir votre analyse détaillée (PDF 15 pages) et vos rituels de saison, rejoignez-nous sur ma page :</p>
                 
-                <!-- Lien Canva correctement intégré dans le bouton -->
-                <a id="pdf-download-btn" href="https://www.canva.com/design/DAG_pIEn5c8/bB6K8LAY_vAX06S1iorsVQ/edit?utm_content=DAG_pIEn5c8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="inline-block bg-white text-stone-800 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition transform">
-                    📥 Télécharger l'Oracle PDF
+                <a href="https://beacons.ai/souffletao2lyanmey" target="_blank" class="tao-button">
+                    📥 Télécharger mon Oracle PDF
                 </a>
-                
-                <p class="text-[10px] opacity-50 mt-4 uppercase">Ce guide contient ton profil détaillé, tes rituels et points d'acupression.</p>
             </div>
 
             <button onclick="window.location.reload()" class="text-stone-300 text-[10px] uppercase tracking-widest hover:text-stone-500 transition">Recommencer l'exploration</button>
@@ -101,7 +100,7 @@
             { q: "2. Quel aspect de la lumière t'appelle le plus aujourd'hui ?", options: [{t:"Le vert tendre des bourgeons qui pierce l'écorce", e:"A"}, {t:"L'éclat vibrant de midi qui fait danser l'air", e:"B"}, {t:"La douceur dorée du crépuscule", e:"C"}, {t:"La clarté blanche de l'aube qui purifie", e:"D"}, {t:"Les reflets argentés de la lune sur l'eau", e:"E"}] },
             { q: "3. Dans le cycle des saisons, quel moment te semble le plus sacré ?", options: [{t:"Le jaillissement irrésistible du Printemps", e:"A"}, {t:"L'apogée radieuse et brûlante de l'Été", e:"B"}, {t:"La transition généreuse de l'Été Indien", e:"C"}, {t:"Le dépouillement élégant de l'Automne", e:"D"}, {t:"Le silence régénérateur de l'Hiver", e:"E"}] },
             { q: "4. Quelle sensation tactile évoque pour toi la plénitude ?", options: [{t:"Toucher la sève qui monte sous une écorce", e:"A"}, {t:"Sentir la caresse d'une braise sur la peau", e:"B"}, {t:"Enfoncer ses doigts dans le velouté du terreau", e:"C"}, {t:"Effleurer la fraîcheur polie d'un cristal", e:"D"}, {t:"Se laisser porter par la fluidité d'une onde", e:"E"}] },
-            { q: "5. En cas de stress, comment ton corps s'exprime-t-il ?", options: [{t:"Des tensions qui se logent dans la nuque", e:"A"}, {t:"Des palpitations ou une agitation dans la poitrine", e:"B"}, {t:"Une sensation de lourdeur après chaque repas", e:"C"}, {t:"Une respiration qui devient courte et serrée", e:"D"}, {t:"Une fatigue sourde nichée dans le creux des reins", e:"E"}] },
+            { q: "5. En cas de stress, comment ton corps s'exprime-t-ils ?", options: [{t:"Des tensions qui se logent dans la nuque", e:"A"}, {t:"Des palpitations ou une agitation dans la poitrine", e:"B"}, {t:"Une sensation de lourdeur après chaque repas", e:"C"}, {t:"Une respiration qui devient courte et serrée", e:"D"}, {t:"Une fatigue sourde nichée dans le creux des reins", e:"E"}] },
             { q: "6. Face à un imprévu, quelle est ta réaction émotionnelle réflexe ?", options: [{t:"Une pointe d'impatience qui pousse à l'action", e:"A"}, {t:"Un besoin soudain de partager et de se connecter", e:"B"}, {t:"Une tendance à ruminer et à trop réfléchir", e:"C"}, {t:"Un retrait immédiat pour retrouver son espace", e:"D"}, {t:"Une sensation de peur diffuse, un besoin de refuge", e:"E"}] },
             { q: "7. De quoi as-tu le plus besoin pour retrouver ton calme ?", options: [{t:"Mettre ton corps en mouvement et créer", e:"A"}, {t:"Rire aux éclats et échanger avec ton cercle", e:"B"}, {t:"Te sentir entourée et tendrement nourrie", e:"C"}, {t:"Trier tes objets, épurer et faire le vide", e:"D"}, {t:"Silence absolu et plonger dans l'obscurité", e:"E"}] },
             { q: "8. Quel est le goût qui te réconforte instinctivement ?", options: [{t:"L'acidulé d'un fruit frais et tonique", e:"A"}, {t:"L'amertume élégante d'un carré de cacao noir", e:"B"}, {t:"La douceur rassurante d'un aliment onctueux", e:"C"}, {t:"Le piquant d'une épice fine qui réveille", e:"D"}, {t:"Le salé minéral d'une eau de source profonde", e:"E"}] },
@@ -120,7 +119,7 @@
         };
 
         let currentQuestion = 0;
-        let scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+        let scores = { A: 0, B: 0, C: 0, D: 0, e: 0 }; // Correction min/maj score
 
         function loadQuestion() {
             const q = quizData[currentQuestion];
@@ -131,26 +130,27 @@
                 const btn = document.createElement('button');
                 btn.className = "option-btn w-full text-left p-4 rounded-2xl bg-white text-stone-700 text-sm md:text-base leading-snug";
                 btn.innerText = opt.t;
-                btn.onclick = () => { scores[opt.e]++; currentQuestion++; next(); };
+                btn.onclick = () => { 
+                    if (scores.hasOwnProperty(opt.e)) scores[opt.e]++;
+                    currentQuestion++; 
+                    next(); 
+                };
                 container.appendChild(btn);
             });
             document.getElementById('progress').style.width = (currentQuestion / quizData.length * 100) + '%';
         }
 
         function next() {
-            if (currentQuestion < quizData.length) loadQuestion();
-            else {
-                document.getElementById('question-box').classList.add('hidden');
-                document.getElementById('quiz-header').classList.add('hidden');
-                document.getElementById('capture-box').classList.remove('hidden');
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showFinalResult();
             }
         }
 
-        function revealResult() {
-            const email = document.getElementById('user-email').value;
-            if (!email || !email.includes('@')) return alert("Merci d'entrer une adresse e-mail valide.");
-            
-            document.getElementById('capture-box').classList.add('hidden');
+        function showFinalResult() {
+            document.getElementById('question-box').classList.add('hidden');
+            document.getElementById('quiz-header').classList.add('hidden');
             document.getElementById('result-box').classList.remove('hidden');
 
             const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
@@ -160,7 +160,7 @@
             document.getElementById('element-icon').innerText = dom.icon;
             document.getElementById('result-title').innerText = "PROFIL " + dom.name;
             document.getElementById('secondary-info').innerText = "DOMINANTE : " + dom.name + " • NUANCE : " + sec.name;
-            document.getElementById('result-summary').innerHTML = `<strong>Ton essence :</strong> ${dom.desc}<br><br>Ton profil secondaire <strong>${sec.name}</strong> apporte une couleur importante à ta structure énergétique actuelle.`;
+            document.getElementById('result-summary').innerHTML = `<strong>Votre essence :</strong> ${dom.desc}<br><br>Votre profil secondaire <strong>${sec.name}</strong> apporte une couleur importante à votre structure énergétique actuelle.`;
         }
 
         loadQuestion();
