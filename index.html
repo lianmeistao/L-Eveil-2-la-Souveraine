@@ -6,24 +6,24 @@
     <title>Souffle TAO — L'Éveil de la Souveraine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .fade-in { animation: fadeIn 0.5s ease both; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         .serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
-        .option-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .option-btn:hover { transform: translateX(5px); background-color: #f5f5f4; }
+        .option-btn { transition: all 0.3s ease; }
+        .option-btn:hover { transform: translateX(8px); background-color: #f5f5f4; border-color: #d6d3d1; }
     </style>
 </head>
 
 <body class="min-h-screen bg-stone-100 flex items-center justify-center font-sans text-stone-800">
 
-    <div id="quiz-container" class="max-w-2xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden p-8 md:p-12 m-4 relative border border-stone-200">
+    <div id="quiz-container" class="max-w-2xl w-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden p-8 md:p-14 m-4 relative border border-stone-200">
         
         <!-- Header -->
-        <div id="quiz-header" class="text-center mb-10">
-            <span class="text-xs uppercase tracking-[0.2em] text-stone-400 mb-3 block">Chroniques Souffle TAO</span>
-            <h1 class="text-3xl md:text-4xl text-stone-800 serif italic">Quel est votre élément dominant ?</h1>
-            <div class="w-full bg-stone-100 h-1 mt-10 rounded-full overflow-hidden">
-                <div id="progress" class="bg-stone-400 h-1 transition-all duration-500" style="width: 0%"></div>
+        <div id="quiz-header" class="text-center mb-12">
+            <span class="text-xs uppercase tracking-[0.3em] text-stone-400 mb-4 block">Chroniques Souffle TAO</span>
+            <h1 class="text-3xl md:text-4xl text-stone-800 serif italic leading-tight">Quel est votre élément dominant ?</h1>
+            <div class="w-full bg-stone-100 h-[2px] mt-10 rounded-full overflow-hidden">
+                <div id="progress" class="bg-stone-400 h-full transition-all duration-700" style="width: 0%"></div>
             </div>
         </div>
 
@@ -37,40 +37,40 @@
 
         <!-- Result Area -->
         <div id="result-box" class="hidden fade-in text-center">
-            <div id="element-icon" class="text-7xl mb-6"></div>
+            <div id="element-icon" class="text-8xl mb-6 drop-shadow-sm"></div>
             <h2 id="result-title" class="text-3xl md:text-4xl mb-4 text-stone-800 serif italic"></h2>
-            <p id="result-archetype" class="italic text-stone-500 mb-8 font-serif text-xl"></p>
+            <p id="result-archetype" class="italic text-stone-500 mb-10 font-serif text-xl"></p>
             
-            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-10 p-8 bg-stone-50 rounded-3xl border border-stone-100 shadow-inner text-lg">
+            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-12 p-10 bg-stone-50 rounded-[2rem] border border-stone-100 shadow-inner text-lg">
                 <!-- Content injected by JS -->
             </div>
             
-            <div class="border-t border-stone-100 pt-10 mt-10 text-center">
+            <div class="border-t border-stone-100 pt-12 mt-12 text-center">
                 <h3 class="serif text-2xl mb-6 text-stone-800">Recevez votre Oracle de Saison complet</h3>
                 
-                <p class="text-stone-500 mb-8 max-w-md mx-auto leading-relaxed">
-                    Souveraine, pour approfondir votre éveil, je vous invite à recevoir votre manuscrit numérique 
-                    <strong>"L'Éveil de la Souveraine"</strong> (PPT/PDF) directement dans votre boîte mail.
+                <p class="text-stone-500 mb-10 max-w-md mx-auto leading-relaxed">
+                    Souveraine, pour approfondir votre éveil, je vous invite à rejoindre notre cercle et à recevoir votre manuscrit numérique 
+                    <strong>"L'Éveil de la Souveraine"</strong> (PPT/PDF).
                 </p>
 
-                <!-- Substack Form -->
-                <div class="max-w-md mx-auto border border-stone-200 rounded-2xl overflow-hidden shadow-lg bg-white">
-                    <iframe 
-                        src="https://souffletao2lyanmey.substack.com/embed" 
-                        width="100%" 
-                        height="320" 
-                        style="border:0; background:white;" 
-                        frameborder="0" 
-                        scrolling="no">
-                    </iframe>
+                <!-- Bouton Prestige Substack -->
+                <div class="max-w-md mx-auto">
+                    <a href="https://souffletao2lyanmey.substack.com/subscribe" 
+                       target="_blank" 
+                       class="block w-full bg-stone-800 text-white text-center py-6 rounded-2xl hover:bg-stone-700 transition-all shadow-xl uppercase tracking-[0.25em] text-sm font-semibold">
+                       Récupérer mon Guide & Rejoindre le Cercle
+                    </a>
+                    <p class="text-[10px] text-stone-400 mt-5 uppercase tracking-widest font-light italic">
+                        Ouverture sécurisée vers votre temple numérique
+                    </p>
                 </div>
                 
-                <!-- Phrase de réassurance "Temple Numérique" -->
-                <div class="mt-8">
-                    <p class="text-xs text-stone-400 leading-relaxed italic">
+                <!-- Phrase de réassurance -->
+                <div class="mt-12">
+                    <p class="text-xs text-stone-400 leading-relaxed italic opacity-80">
                         Votre confiance est le socle de notre cercle. <br>
                         Vos données sont protégées dans notre temple numérique ; <br>
-                        aucun spam ne viendra troubler votre quiétude. <br>
+                        aucun message abusif ne viendra troubler votre quiétude. <br>
                         Désinscription possible d'un simple souffle.
                     </p>
                 </div>
@@ -118,14 +118,12 @@
             btn.onclick = () => selectOption(opt.e);
             container.appendChild(btn);
         });
-
         document.getElementById('progress').style.width = (currentQuestion / quizData.length * 100) + '%';
     }
 
     function selectOption(element) {
         scores[element]++;
         currentQuestion++;
-        
         if (currentQuestion < quizData.length) {
             const box = document.getElementById('question-box');
             box.classList.remove('fade-in');
@@ -142,17 +140,14 @@
         document.getElementById('quiz-header').classList.add('hidden');
         const resultBox = document.getElementById('result-box');
         resultBox.classList.remove('hidden');
-
         let dominant = 'A';
         for (let e in scores) { if (scores[e] > scores[dominant]) dominant = e; }
-
         const res = results[dominant];
         document.getElementById('element-icon').innerText = res.icon;
         document.getElementById('result-title').innerText = res.title;
         document.getElementById('result-archetype').innerText = res.archetype;
         document.getElementById('result-content').innerHTML = res.content;
     }
-
     loadQuestion();
 </script>
 </body>
