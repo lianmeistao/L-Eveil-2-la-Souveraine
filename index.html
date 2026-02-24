@@ -9,7 +9,7 @@
         .fade-in { animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         .serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
-        .option-btn { transition: all 0.3s ease; }
+        .option-btn { transition: all 0.3s ease; cursor: pointer; }
         .option-btn:hover { transform: translateX(8px); background-color: #f5f5f4; border-color: #d6d3d1; }
         .prestige-box { background: linear-gradient(145deg, #292524, #1c1917); }
     </style>
@@ -41,17 +41,17 @@
             <h2 id="result-title" class="text-3xl md:text-4xl mb-4 text-stone-800 serif italic"></h2>
             <p id="result-archetype" class="italic text-stone-500 mb-10 font-serif text-xl"></p>
             
-            <!-- Scores détaillés -->
+            <!-- Scores détaillés (Dominant + Secondaire) -->
             <div class="mb-12 p-8 bg-stone-50 rounded-[2rem] border border-stone-100 shadow-inner text-left">
                 <h4 class="serif text-xl text-stone-700 mb-6 italic">Votre Signature de Saison :</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm">
                         <span class="text-[10px] uppercase tracking-widest text-stone-400 block mb-1">Élément Majeur</span>
-                        <p id="dominant-score" class="text-stone-800 font-medium"></p>
+                        <p id="dominant-score" class="text-stone-800 font-medium text-lg"></p>
                     </div>
                     <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm">
                         <span class="text-[10px] uppercase tracking-widest text-stone-400 block mb-1">Élément Mineur</span>
-                        <p id="secondary-score" class="text-stone-800 font-medium"></p>
+                        <p id="secondary-score" class="text-stone-800 font-medium text-lg"></p>
                     </div>
                 </div>
                 <p class="text-[11px] text-stone-400 mt-6 italic leading-relaxed">
@@ -65,56 +65,44 @@
             <div class="border-t border-stone-100 pt-12 mt-12 text-center">
                 <h3 class="serif text-2xl mb-6 text-stone-800">Allez plus loin dans votre Éveil</h3>
                 
-                <div class="prestige-box text-stone-100 p-8 md:p-10 rounded-[2.5rem] mb-12 text-left shadow-2xl relative overflow-hidden">
-                    <!-- Déco subtile -->
-                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl serif italic">TAO</div>
-                    
+                <div class="prestige-box text-stone-100 p-8 md:p-10 rounded-[2.5rem] mb-8 text-left shadow-2xl relative overflow-hidden">
                     <h4 class="serif italic text-2xl mb-4 text-white">Le Manuscrit : « Guide de Renaissance TAO »</h4>
                     <p class="text-sm text-stone-300 mb-8 leading-relaxed">
-                        Pour comprendre l'interaction de vos <strong>deux éléments dominants</strong>, je vous offre mon manuscrit numérique de <strong>14 pages</strong> (PDF). 
+                        Pour comprendre l'interaction de vos <strong>deux éléments dominants</strong>, je vous offre mon manuscrit numérique de <strong>14 pages</strong> (PDF) envoyé par e-mail. 
                     </p>
                     
-                    <div class="space-y-4 mb-10">
-                        <div class="flex items-start gap-3">
-                            <span class="text-stone-400 mt-1">✦</span>
-                            <p class="text-xs uppercase tracking-widest leading-loose">Analyse croisée de vos 12 réponses</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-stone-400 mt-1">✦</span>
-                            <p class="text-xs uppercase tracking-widest leading-loose">Rituels de Renaissance (Marche & Journaling)</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-stone-400 mt-1">✦</span>
-                            <p class="text-xs uppercase tracking-widest leading-loose">Points d'acupression précis pour votre profil</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-stone-400 mt-1">✦</span>
-                            <p class="text-xs uppercase tracking-widest leading-loose">Le secret du Qi Gong et de la respiration 4-4-4</p>
-                        </div>
-                    </div>
+                    <ul class="text-[11px] space-y-4 mb-10 uppercase tracking-[0.15em] font-light opacity-90 border-l border-stone-600 pl-6">
+                        <li>✦ Analyse croisée de vos 12 réponses</li>
+                        <li>✦ Rituels quotidiens (Marche & Journaling)</li>
+                        <li>✦ Points d'acupression précis pour votre profil</li>
+                        <li>✦ Le secret de la respiration 4-4-4</li>
+                    </ul>
 
-                    <!-- BOUTON D'ACTION (LE LIEN) -->
+                    <!-- BOUTON D'ACTION (LE LIEN SUBSTACK) -->
                     <a href="https://souffletao2lyanmey.substack.com/subscribe" 
                        target="_blank" 
-                       class="block w-full bg-stone-100 text-stone-900 text-center py-6 rounded-2xl hover:bg-white transition-all shadow-xl uppercase tracking-[0.25em] text-sm font-bold">
-                       Récupérer mon Manuscrit (Gratuit)
+                       class="block w-full bg-stone-100 text-stone-900 text-center py-6 rounded-2xl hover:bg-white transition-all shadow-xl uppercase tracking-[0.25em] text-sm font-bold no-underline">
+                       Récupérer mon Manuscrit
                     </a>
                 </div>
 
-                <p class="text-xs text-stone-500 max-w-sm mx-auto leading-relaxed mb-12">
-                    En cliquant, vous rejoindrez notre cercle sur Substack. <br>
-                    <strong>Entrez simplement votre email sur la page suivante</strong> pour recevoir le PDF. Aucun compte n'est requis.
-                </p>
-                
-                <div class="opacity-60 italic text-[10px] text-stone-400 uppercase tracking-widest">
-                    Confidentialité préservée • Désinscription d'un souffle
+                <!-- RÉASSURANCE SÉCURITÉ -->
+                <div class="max-w-md mx-auto space-y-4">
+                    <p class="text-xs text-stone-600 font-medium leading-relaxed">
+                        Vous ne serez jamais spammée. 
+                    </p>
+                    <p class="text-[11px] text-stone-400 leading-relaxed italic opacity-80">
+                        Souveraine, votre confiance est le socle de notre cercle. <br>
+                        Vos données sont protégées dans notre temple numérique ; <br>
+                        aucun message abusif ne viendra troubler votre quiétude. <br>
+                        <strong>Désinscription possible d'un simple souffle.</strong>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
 <script>
-    // Les données et la logique restent identiques pour garantir le calcul des scores
     const quizData = [
         { q: "1. Si vous deviez vous fondre dans un paysage pour vous ressourcer, lequel choisiriez-vous ?", options: [{ t: "Une forêt dense où l'on sent l'odeur de la mousse", e: "A" },{ t: "Un champ baigné de soleil où l'on s'enivre de chaleur", e: "B" },{ t: "Une plaine fertile où l'on pétrit la terre douce", e: "C" },{ t: "Une montagne pure où l'on respire l'air cristallin", e: "D" },{ t: "Un rivage nocturne où l'on écoute le chant des abysses", e: "E" }] },
         { q: "2. Quel aspect de la lumière vous appelle le plus intensément aujourd'hui ?", options: [{ t: "Le vert tendre des bourgeons qui percent l'écorce", e: "A" },{ t: "L'éclat vibrant de midi qui fait danser l'air", e: "B" },{ t: "La douceur dorée du crépuscule qui enveloppe le monde", e: "C" },{ t: "La clarté blanche de l'aube qui purifie le regard", e: "D" },{ t: "Les reflets argentés de la lune qui scintillent sur l'eau", e: "E" }] },
@@ -131,11 +119,11 @@
     ];
 
     const results = {
-        A: { title: "L'Élan du BOIS", icon: "🌿", label: "Bois", archetype: "La Visionnaire, l'Amazone", content: "Vous portez en vous l'énergie du Printemps, une sève montante qui demande à créer et avancer. <br><br><strong>Vos Rituels :</strong> Libérez vos tensions en massant le point <em>Taichong</em> sur vos pieds et privilégiez les saveurs acidulées pour fluidifier votre Qi." },
-        B: { title: "La Flamme du FEU", icon: "🔥", label: "Feu", archetype: "L'Impératrice, l'Amoureuse", content: "Vous vibrez à la fréquence de l'Été. Vous êtes faite pour la connexion et la joie rayonnante. <br><br><strong>Vos Rituels :</strong> Apaisez votre cœur avec un peu d'amertume noble (cacao noir) et stimulez le point <em>Shenmen</em> pour calmer l'agitation." },
-        C: { title: "Le Socle de la TERRE", icon: "🏺", label: "Terre", archetype: "La Mère Nourricière, la Gardienne", content: "Vous incarnez la stabilité et la récolte. Votre force réside dans votre capacité à soutenir et harmoniser. <br><br><strong>Vos Rituels :</strong> Revenez à vous avec des aliments doux et stimulez le point <em>Zusanli</em> pour renforcer votre ancrage sacré." },
-        D: { title: "Le Joyau du MÉTAL", icon: "✨", label: "Métal", archetype: "L'Alchimiste, la Sage", content: "Vous êtes l'Automne, la quête de l'essentiel et de la pureté. Vous savez trancher pour ne garder que le précieux. <br><br><strong>Vos Rituels :</strong> Respirez avec le point <em>Hegu</em> et misez sur les aliments blancs pour nourrir vos poumons." },
-        E: { title: "La Source de l'EAU", icon: "💧", label: "Eau", archetype: "La Mystique, la Femme Sauvage", content: "Vous portez l'énergie de l'Hiver et de l'intuition profonde. Vous savez écouter le silence. <br><br><strong>Vos Rituels :</strong> Rechargez vos réserves vitales au calme et frictionnez le point <em>Yongquan</em> sous vos pieds." }
+        A: { title: "L'Élan du BOIS", icon: "🌿", label: "Bois", archetype: "La Visionnaire, l'Amazone", content: "Vous portez en vous l'énergie du Printemps, une sève montante qui demande à créer et avancer. <br><br><strong>Vos Rituels :</strong> Libérez vos tensions en massant le point <em>Taichong</em> sur vos pieds et privilégiez les saveurs acidulées." },
+        B: { title: "La Flamme du FEU", icon: "🔥", label: "Feu", archetype: "L'Impératrice, l'Amoureuse", content: "Vous vibrez à la fréquence de l'Été. Vous êtes faite pour la connexion et la joie rayonnante. <br><br><strong>Vos Rituels :</strong> Apaisez votre cœur avec un peu d'amertume noble (cacao noir) et stimulez le point <em>Shenmen</em>." },
+        C: { title: "Le Socle de la TERRE", icon: "🏺", label: "Terre", archetype: "La Mère Nourricière, la Gardienne", content: "Vous incarnez la stabilité et la récolte. Votre force réside dans votre capacité à soutenir et harmoniser. <br><br><strong>Vos Rituels :</strong> Revenez à vous avec des aliments doux et stimulez le point <em>Zusanli</em>." },
+        D: { title: "Le Joyau du MÉTAL", icon: "✨", label: "Métal", archetype: "L'Alchimiste, la Sage", content: "Vous êtes l'Automne, la quête de l'essentiel et de la pureté. Vous savez trancher pour ne garder que le précieux. <br><br><strong>Vos Rituels :</strong> Respirez avec le point <em>Hegu</em> et misez sur les aliments blancs." },
+        E: { title: "La Source de l'EAU", icon: "💧", label: "Eau", archetype: "La Mystique, la Femme Sauvage", content: "Vous portez l'énergie de l'Hiver et de l'intuition profonde. Vous savez écouter le silence. <br><br><strong>Vos Rituels :</strong> Rechargez vos réserves vitales au calme et frictionnez le point <em>Yongquan</em>." }
     };
 
     let currentQuestion = 0;
@@ -177,7 +165,7 @@
         const resultBox = document.getElementById('result-box');
         resultBox.classList.remove('hidden');
 
-        // Trier les scores pour trouver dominant et secondaire
+        // Trier les scores
         let sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
         let dom = sorted[0][0];
         let sec = sorted[1][0];
@@ -190,11 +178,12 @@
         document.getElementById('result-archetype').innerText = res.archetype;
         document.getElementById('result-content').innerHTML = res.content;
 
-        document.getElementById('dominant-score').innerText = res.label + " (" + sorted[0][1] + " pts)";
-        document.getElementById('secondary-score').innerText = resSec.label + " (" + sorted[1][1] + " pts)";
+        document.getElementById('dominant-score').innerText = res.label + " (" + sorted[0][1] + " réponses)";
+        document.getElementById('secondary-score').innerText = resSec.label + " (" + sorted[1][1] + " réponses)";
     }
     loadQuestion();
 </script>
 </body>
 </html>
+
 
