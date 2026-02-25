@@ -41,7 +41,7 @@
             <h2 id="result-title" class="text-3xl md:text-4xl mb-4 text-stone-800 serif italic"></h2>
             <p id="result-archetype" class="italic text-stone-500 mb-10 font-serif text-xl"></p>
             
-            <!-- Scores détaillés (Majeur + Mineur) -->
+            <!-- Scores détaillés -->
             <div class="mb-12 p-8 bg-stone-50 rounded-[2rem] border border-stone-100 shadow-inner text-left">
                 <h4 class="serif text-xl text-stone-700 mb-6 italic">Votre Signature de Saison :</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -55,13 +55,13 @@
                     </div>
                 </div>
                 <p class="text-[11px] text-stone-400 mt-6 italic leading-relaxed">
-                    Votre élément mineur nuance votre profil principal. C'est votre ressource cachée, celle vers laquelle vous tournez instinctivement pour retrouver l'équilibre.
+                    Votre élément mineur nuance votre profil principal. C'est votre ressource cachée pour retrouver l'équilibre.
                 </p>
             </div>
 
             <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-12 p-10 bg-stone-50 rounded-[2rem] border border-stone-100 text-lg"></div>
             
-            <!-- OFFRE MANUSCRIT (LA VALEUR) -->
+            <!-- OFFRE MANUSCRIT -->
             <div class="border-t border-stone-100 pt-12 mt-12 text-center">
                 <h3 class="serif text-2xl mb-6 text-stone-800">Allez plus loin dans votre Éveil</h3>
                 
@@ -78,8 +78,8 @@
                         <li>✦ Le secret de la respiration 4-4-4</li>
                     </ul>
 
-                    <!-- BOUTON D'ACTION (Lien Substack Exact demandé) -->
-                    <a href="https://souffletao.substack.com/p/votre-cadeau-le-guide-de-renaissance-a56?r=70tisq" 
+                    <!-- BOUTON D'ACTION CORRIGÉ : Forcer la page de bienvenue Substack -->
+                    <a href="https://souffletao.substack.com/welcome" 
                        target="_blank" 
                        class="block w-full bg-stone-100 text-stone-900 text-center py-6 rounded-2xl hover:bg-white transition-all shadow-xl uppercase tracking-[0.25em] text-sm font-bold no-underline">
                        Récupérer mon Manuscrit
@@ -89,12 +89,11 @@
                 <!-- RÉASSURANCE SÉCURITÉ -->
                 <div class="max-w-md mx-auto space-y-4">
                     <p class="text-xs text-stone-600 font-medium leading-relaxed">
-                        Vous ne serez jamais spammée. 
+                        Votre adresse e-mail est en sécurité.
                     </p>
                     <p class="text-[11px] text-stone-400 leading-relaxed italic opacity-80">
                         Souveraine, votre confiance est le socle de notre cercle. <br>
-                        Vos données sont protégées dans notre temple numérique ; <br>
-                        aucun message abusif ne viendra troubler votre quiétude. <br>
+                        Vos données sont protégées dans notre temple numérique. <br>
                         <strong>Désinscription possible d'un simple souffle.</strong>
                     </p>
                 </div>
@@ -165,7 +164,6 @@
         const resultBox = document.getElementById('result-box');
         resultBox.classList.remove('hidden');
 
-        // Calcul Scores
         let sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
         let dom = sorted[0][0];
         let sec = sorted[1][0];
