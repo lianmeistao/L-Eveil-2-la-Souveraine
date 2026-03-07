@@ -32,12 +32,11 @@
             </div>
         </div>
 
-        <!-- Result Area (Masqué par défaut) -->
-        <div id="result-box" class="hidden fade-in text-center">
+        <!-- ÉTAPE INTERMÉDIAIRE : Offre du Manuscrit (Avant le résultat) -->
+        <div id="offer-box" class="hidden fade-in text-center">
+            <h2 class="text-2xl text-stone-800 mb-6 font-light">Ton analyse est prête...</h2>
             
-            <!-- NOUVEAU BLOC : Appel à l'action Manuscrit (Apparaît en premier) -->
-            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 mb-12 shadow-sm text-center relative overflow-hidden">
-                <!-- Petit accent décoratif -->
+            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 mb-8 shadow-sm text-center relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-1 bg-stone-300"></div>
                 
                 <h2 class="text-2xl text-stone-800 mb-2 mt-2">Allez plus loin dans votre Éveil</h2>
@@ -60,7 +59,7 @@
                     </a>
                 </div>
                 
-                <div class="mt-8 pt-6 border-t border-stone-200">
+                <div class="mt-6 pt-6 border-t border-stone-200">
                     <p class="text-xs text-stone-400 italic leading-relaxed">
                         Votre adresse e-mail est en sécurité.<br>
                         Souveraine, votre confiance est le socle de notre cercle.<br>
@@ -69,30 +68,36 @@
                     </p>
                 </div>
             </div>
-            <!-- FIN DU NOUVEAU BLOC -->
 
-            <!-- Révélation de l'Élément (Juste en dessous) -->
-            <div class="pt-4">
-                <p class="text-sm text-stone-400 uppercase tracking-widest mb-6">Votre Résultat</p>
-                <div id="element-icon" class="text-6xl mb-4"></div>
-                <h2 id="result-title" class="text-3xl mb-4 text-stone-800"></h2>
-                <p id="result-archetype" class="italic text-stone-500 mb-6 font-serif text-lg"></p>
-                <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-8 p-6 bg-white rounded-2xl border border-stone-100 shadow-sm"></div>
-            </div>
+            <!-- Bouton pour passer à la révélation -->
+            <button onclick="showResult()" class="text-stone-500 hover:text-stone-800 transition-colors duration-300 text-xs md:text-sm tracking-widest uppercase border-b border-stone-300 hover:border-stone-800 pb-1 mt-2">
+                Continuer pour révéler mon Élément Dominant →
+            </button>
+        </div>
+
+        <!-- ÉTAPE FINALE : Result Area (Masqué par défaut) -->
+        <div id="result-box" class="hidden fade-in text-center">
+            <p class="text-sm text-stone-400 uppercase tracking-widest mb-6">Votre Résultat</p>
+            <div id="element-icon" class="text-6xl mb-4"></div>
+            <h2 id="result-title" class="text-3xl mb-4 text-stone-800"></h2>
+            <p id="result-archetype" class="italic text-stone-500 mb-6 font-serif text-lg"></p>
+            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-8 p-6 bg-stone-50 rounded-2xl border border-stone-100"></div>
             
-            <div class="border-t border-stone-100 pt-8 mt-4 text-left">
+            <!-- J'ai conservé votre encart Substack d'origine ici pour maximiser la conversion à la toute fin -->
+            <div class="border-t border-stone-100 pt-8 mt-8 text-left">
                 <p class="text-sm text-stone-500 mb-2 italic text-center">Ton paysage intérieur se dessine...</p>
                 <h3 class="serif text-2xl mb-4 text-stone-800 text-center">Reçois ton Oracle de Saison complet</h3>
                 
-                <!-- Message d'information avant abonnement -->
                 <div class="bg-stone-50 border border-stone-100 rounded-2xl p-5 mb-6 text-sm text-stone-600 leading-relaxed">
                     <p class="mb-3">
                         En t'abonnant à mes Chroniques sur <strong>Substack</strong>, tu recevras immédiatement le lien pour télécharger ton PowerPoint 
                         <strong>"L'Éveil de la Souveraine"</strong> (le guide complet des 5 éléments) dans ton mail de bienvenue.
                     </p>
+                    <p class="text-xs text-stone-400 italic">
+                        Tu rejoins ainsi notre cercle privé. Désinscription possible d'un simple souffle.
+                    </p>
                 </div>
 
-                <!-- Formulaire d'inscription Substack intégré -->
                 <div class="max-w-md mx-auto border border-stone-200 rounded-xl overflow-hidden shadow-sm">
                     <iframe 
                         src="https://souffletao2lyanmey.substack.com/embed" 
@@ -103,136 +108,24 @@
                         scrolling="no">
                     </iframe>
                 </div>
-                
-                <p class="text-xs text-stone-400 mt-6 text-center italic">
-                    Regarde ta boîte mail après avoir validé ton inscription !
-                </p>
             </div>
         </div>
     </div>
 
     <script>
         const quizData = [
-            {
-                q: "1. Si tu devais te fondre dans un paysage pour te ressourcer, lequel choisirais-tu ?",
-                options: [
-                    { t: "Une forêt dense où l'on sent l'odeur de la mousse", e: "A" },
-                    { t: "Un champ baigné de soleil où l'on s'enivre de chaleur", e: "B" },
-                    { t: "Une plaine fertile où l'on pétrit la terre douce", e: "C" },
-                    { t: "Une montagne pure où l'on respire l'air cristallin", e: "D" },
-                    { t: "Un rivage nocturne où l'on écoute le chant des abysses", e: "E" }
-                ]
-            },
-            {
-                q: "2. Quel aspect de la lumière t'appelle le plus intensément aujourd'hui ?",
-                options: [
-                    { t: "Le vert tendre des bourgeons qui percent l'écorce", e: "A" },
-                    { t: "L'éclat vibrant de midi qui fait danser l'air", e: "B" },
-                    { t: "La douceur dorée du crépuscule qui enveloppe le monde", e: "C" },
-                    { t: "La clarté blanche de l'aube qui purifie le regard", e: "D" },
-                    { t: "Les reflets argentés de la lune qui scintillent sur l'eau", e: "E" }
-                ]
-            },
-            {
-                q: "3. Dans le cycle des saisons, quel moment te semble le plus sacré ?",
-                options: [
-                    { t: "Le jaillissement irrésistible du renouveau printanier", e: "A" },
-                    { t: "L'apogée radieuse et brûlante de l'été", e: "B" },
-                    { t: "La transition généreuse et nourricière de l'été indien", e: "C" },
-                    { t: "Le dépouillement élégant et nécessaire de l'automne", e: "D" },
-                    { t: "Le silence régénérateur et mystérieux de l'hiver", e: "E" }
-                ]
-            },
-            {
-                q: "4. Quelle sensation tactile évoque pour toi la plénitude absolue ?",
-                options: [
-                    { t: "Toucher la sève qui monte sous une écorce", e: "A" },
-                    { t: "Sentir la caresse d'une braise sur la peau", e: "B" },
-                    { t: "Enfoncer ses doigts dans le velouté du terreau", e: "C" },
-                    { t: "Effleurer la fraîcheur polie d'un cristal de roche", e: "D" },
-                    { t: "Se laisser porter par la fluidité d'une onde fraîche", e: "E" }
-                ]
-            },
-            {
-                q: "5. En ce moment, quand ton emploi du temps sature, comment ton corps s'exprime-t-il ?",
-                options: [
-                    { t: "Des tensions qui se logent dans la nuque", e: "A" },
-                    { t: "Des palpitations ou une agitation dans la poitrine", e: "B" },
-                    { t: "Une sensation de lourdeur après chaque repas", e: "C" },
-                    { t: "Une respiration qui devient courte et serrée", e: "D" },
-                    { t: "Une fatigue sourde nichée dans le creux des reins", e: "E" }
-                ]
-            },
-            {
-                q: "6. Ces derniers temps, face à un imprévu, quelle est ta réaction émotionnelle réflexe ?",
-                options: [
-                    { t: "Une pointe d'impatience qui pousse à l'action", e: "A" },
-                    { t: "Un besoin soudain de partager et de se connecter", e: "B" },
-                    { t: "Une tendance à ruminer et à trop réfléchir", e: "C" },
-                    { t: "Un retrait immédiat pour retrouver son espace", e: "D" },
-                    { t: "Une sensation de peur diffuse, un besoin de refuge", e: "E" }
-                ]
-            },
-            {
-                q: "7. En ce moment, de quoi as-tu le plus besoin pour retrouver ton calme ?",
-                options: [
-                    { t: "De mettre ton corps en mouvement et de créer", e: "A" },
-                    { t: "De rire aux éclats et d'échanger avec ton cercle", e: "B" },
-                    { t: "De te sentir entourée et tendrement nourrie", e: "C" },
-                    { t: "De trier tes objets, d'épurer et de faire le vide", e: "D" },
-                    { t: "De silence absolu et de plonger dans l'obscurité", e: "E" }
-                ]
-            },
-            {
-                q: "8. Ces jours-ci, quel est le goût qui te réconforte instinctivement ?",
-                options: [
-                    { t: "L'acidulé d'un fruit frais et tonique", e: "A" },
-                    { t: "L'amertume élégante d'un carré de cacao noir", e: "B" },
-                    { t: "La douceur rassurante d'un aliment onctueux et sucré", e: "C" },
-                    { t: "Le piquant d'une épice fine qui réveille les sens", e: "D" },
-                    { t: "Le salé minéral d'une eau de source profonde", e: "E" }
-                ]
-            },
-            {
-                q: "9. En ce moment, dans tes projets, quelle étape te procure le plus de joie ?",
-                options: [
-                    { t: "L'élan initial, la naissance d'une idée neuve", e: "A" },
-                    { t: "Le moment du partage et du rayonnement public", e: "B" },
-                    { t: "La consolidation lente et la mise en place stable", e: "C" },
-                    { t: "La finition méticuleuse et l'épuration finale", e: "D" },
-                    { t: "La gestation secrète et la réflexion intuitive", e: "E" }
-                ]
-            },
-            {
-                q: "10. Ces derniers temps, quelle qualité féminine souhaites-tu incarner davantage ?",
-                options: [
-                    { t: "La force d'affirmation et la croissance libre", e: "A" },
-                    { t: "La joie de vivre solaire et la connexion au cœur", e: "B" },
-                    { t: "La capacité d'ancrage et le soin apporté à soi", e: "C" },
-                    { t: "L'intégrité souveraine et la clarté du discernement", e: "D" },
-                    { t: "La sagesse silencieuse et l'écoute de l'invisible", e: "E" }
-                ]
-            },
-            {
-                q: "11. En ce moment, comment décrirais-tu ton sommeil ?",
-                options: [
-                    { t: "Agité, peuplé de rêves de mouvement et d'action", e: "A" },
-                    { t: "Court mais intense, avec des réveils légers", e: "B" },
-                    { t: "Lourd et profond, avec des réveils embrumés", e: "C" },
-                    { t: "Calme et régulier, mais parfois sec", e: "D" },
-                    { t: "Immense et onirique, plongée en eaux profondes", e: "E" }
-                ]
-            },
-            {
-                q: "12. Si ton âme était un objet précieux aujourd'hui, lequel serait-ce ?",
-                options: [
-                    { t: "Une tige de bambou, flexible et incassable", e: "A" },
-                    { t: "Une flamme libre, dansant librement", e: "B" },
-                    { t: "Une poterie d'argile, façonnée avec amour", e: "C" },
-                    { t: "Un miroir d'argent pur, poli et clair", e: "D" },
-                    { t: "Une perle de nacre au fond de l'océan", e: "E" }
-                ]
-            }
+            { q: "1. Si tu devais te fondre dans un paysage pour te ressourcer, lequel choisirais-tu ?", options: [ { t: "Une forêt dense où l'on sent l'odeur de la mousse", e: "A" }, { t: "Un champ baigné de soleil où l'on s'enivre de chaleur", e: "B" }, { t: "Une plaine fertile où l'on pétrit la terre douce", e: "C" }, { t: "Une montagne pure où l'on respire l'air cristallin", e: "D" }, { t: "Un rivage nocturne où l'on écoute le chant des abysses", e: "E" } ] },
+            { q: "2. Quel aspect de la lumière t'appelle le plus intensément aujourd'hui ?", options: [ { t: "Le vert tendre des bourgeons qui percent l'écorce", e: "A" }, { t: "L'éclat vibrant de midi qui fait danser l'air", e: "B" }, { t: "La douceur dorée du crépuscule qui enveloppe le monde", e: "C" }, { t: "La clarté blanche de l'aube qui purifie le regard", e: "D" }, { t: "Les reflets argentés de la lune qui scintillent sur l'eau", e: "E" } ] },
+            { q: "3. Dans le cycle des saisons, quel moment te semble le plus sacré ?", options: [ { t: "Le jaillissement irrésistible du renouveau printanier", e: "A" }, { t: "L'apogée radieuse et brûlante de l'été", e: "B" }, { t: "La transition généreuse et nourricière de l'été indien", e: "C" }, { t: "Le dépouillement élégant et nécessaire de l'automne", e: "D" }, { t: "Le silence régénérateur et mystérieux de l'hiver", e: "E" } ] },
+            { q: "4. Quelle sensation tactile évoque pour toi la plénitude absolue ?", options: [ { t: "Toucher la sève qui monte sous une écorce", e: "A" }, { t: "Sentir la caresse d'une braise sur la peau", e: "B" }, { t: "Enfoncer ses doigts dans le velouté du terreau", e: "C" }, { t: "Effleurer la fraîcheur polie d'un cristal de roche", e: "D" }, { t: "Se laisser porter par la fluidité d'une onde fraîche", e: "E" } ] },
+            { q: "5. En ce moment, quand ton emploi du temps sature, comment ton corps s'exprime-t-il ?", options: [ { t: "Des tensions qui se logent dans la nuque", e: "A" }, { t: "Des palpitations ou une agitation dans la poitrine", e: "B" }, { t: "Une sensation de lourdeur après chaque repas", e: "C" }, { t: "Une respiration qui devient courte et serrée", e: "D" }, { t: "Une fatigue sourde nichée dans le creux des reins", e: "E" } ] },
+            { q: "6. Ces derniers temps, face à un imprévu, quelle est ta réaction émotionnelle réflexe ?", options: [ { t: "Une pointe d'impatience qui pousse à l'action", e: "A" }, { t: "Un besoin soudain de partager et de se connecter", e: "B" }, { t: "Une tendance à ruminer et à trop réfléchir", e: "C" }, { t: "Un retrait immédiat pour retrouver son espace", e: "D" }, { t: "Une sensation de peur diffuse, un besoin de refuge", e: "E" } ] },
+            { q: "7. En ce moment, de quoi as-tu le plus besoin pour retrouver ton calme ?", options: [ { t: "De mettre ton corps en mouvement et de créer", e: "A" }, { t: "De rire aux éclats et d'échanger avec ton cercle", e: "B" }, { t: "De te sentir entourée et tendrement nourrie", e: "C" }, { t: "De trier tes objets, d'épurer et de faire le vide", e: "D" }, { t: "De silence absolu et de plonger dans l'obscurité", e: "E" } ] },
+            { q: "8. Ces jours-ci, quel est le goût qui te réconforte instinctivement ?", options: [ { t: "L'acidulé d'un fruit frais et tonique", e: "A" }, { t: "L'amertume élégante d'un carré de cacao noir", e: "B" }, { t: "La douceur rassurante d'un aliment onctueux et sucré", e: "C" }, { t: "Le piquant d'une épice fine qui réveille les sens", e: "D" }, { t: "Le salé minéral d'une eau de source profonde", e: "E" } ] },
+            { q: "9. En ce moment, dans tes projets, quelle étape te procure le plus de joie ?", options: [ { t: "L'élan initial, la naissance d'une idée neuve", e: "A" }, { t: "Le moment du partage et du rayonnement public", e: "B" }, { t: "La consolidation lente et la mise en place stable", e: "C" }, { t: "La finition méticuleuse et l'épuration finale", e: "D" }, { t: "La gestation secrète et la réflexion intuitive", e: "E" } ] },
+            { q: "10. Ces derniers temps, quelle qualité féminine souhaites-tu incarner davantage ?", options: [ { t: "La force d'affirmation et la croissance libre", e: "A" }, { t: "La joie de vivre solaire et la connexion au cœur", e: "B" }, { t: "La capacité d'ancrage et le soin apporté à soi", e: "C" }, { t: "L'intégrité souveraine et la clarté du discernement", e: "D" }, { t: "La sagesse silencieuse et l'écoute de l'invisible", e: "E" } ] },
+            { q: "11. En ce moment, comment décrirais-tu ton sommeil ?", options: [ { t: "Agité, peuplé de rêves de mouvement et d'action", e: "A" }, { t: "Court mais intense, avec des réveils légers", e: "B" }, { t: "Lourd et profond, avec des réveils embrumés", e: "C" }, { t: "Calme et régulier, mais parfois sec", e: "D" }, { t: "Immense et onirique, plongée en eaux profondes", e: "E" } ] },
+            { q: "12. Si ton âme était un objet précieux aujourd'hui, lequel serait-ce ?", options: [ { t: "Une tige de bambou, flexible et incassable", e: "A" }, { t: "Une flamme libre, dansant librement", e: "B" }, { t: "Une poterie d'argile, façonnée avec amour", e: "C" }, { t: "Un miroir d'argent pur, poli et clair", e: "D" }, { t: "Une perle de nacre au fond de l'océan", e: "E" } ] }
         ];
 
         const results = {
@@ -275,13 +168,26 @@
                 box.classList.add('fade-in');
                 loadQuestion();
             } else {
-                showResult();
+                showOffer(); // Lance la page intermédiaire d'abord
             }
         }
 
-        function showResult() {
+        function showOffer() {
+            // Cache les questions
             document.getElementById('question-box').classList.add('hidden');
             document.getElementById('quiz-header').classList.add('hidden');
+            
+            // Affiche SEULEMENT l'offre du manuscrit
+            const offerBox = document.getElementById('offer-box');
+            offerBox.classList.remove('hidden');
+            document.getElementById('progress').style.width = '100%';
+        }
+
+        function showResult() {
+            // Cache l'offre du manuscrit
+            document.getElementById('offer-box').classList.add('hidden');
+            
+            // Révèle enfin le résultat final
             const resultBox = document.getElementById('result-box');
             resultBox.classList.remove('hidden');
 
@@ -295,12 +201,10 @@
             document.getElementById('result-title').innerText = res.title;
             document.getElementById('result-archetype').innerText = res.archetype;
             document.getElementById('result-content').innerHTML = res.content;
-            document.getElementById('progress').style.width = '100%';
         }
 
         loadQuestion();
     </script>
 </body>
 </html>
-
 
