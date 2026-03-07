@@ -34,12 +34,53 @@
 
         <!-- Result Area (Masqué par défaut) -->
         <div id="result-box" class="hidden fade-in text-center">
-            <div id="element-icon" class="text-6xl mb-4"></div>
-            <h2 id="result-title" class="text-3xl mb-4 text-stone-800"></h2>
-            <p id="result-archetype" class="italic text-stone-500 mb-6 font-serif text-lg"></p>
-            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-8 p-6 bg-stone-50 rounded-2xl border border-stone-100"></div>
             
-            <div class="border-t border-stone-100 pt-8 mt-8 text-left">
+            <!-- NOUVEAU BLOC : Appel à l'action Manuscrit (Apparaît en premier) -->
+            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 mb-12 shadow-sm text-center relative overflow-hidden">
+                <!-- Petit accent décoratif -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-stone-300"></div>
+                
+                <h2 class="text-2xl text-stone-800 mb-2 mt-2">Allez plus loin dans votre Éveil</h2>
+                <h3 class="serif text-xl italic text-stone-500 mb-6">Le Manuscrit : « Guide de Renaissance TAO »</h3>
+                
+                <p class="text-stone-600 leading-relaxed mb-6 px-4">
+                    Pour comprendre l'interaction de vos <strong>deux éléments dominants</strong>, je vous offre mon manuscrit numérique de 14 pages (PDF) envoyé par e-mail.
+                </p>
+                
+                <ul class="text-left text-stone-600 space-y-3 mb-8 inline-block">
+                    <li><span class="text-stone-400 mr-3">✦</span> Analyse croisée de vos 12 réponses</li>
+                    <li><span class="text-stone-400 mr-3">✦</span> Rituels de Renaissance (Marche & Journaling)</li>
+                    <li><span class="text-stone-400 mr-3">✦</span> Points d'acupression précis pour votre profil</li>
+                    <li><span class="text-stone-400 mr-3">✦</span> Le secret de la respiration 4-4-4</li>
+                </ul>
+                
+                <div class="mb-4">
+                    <a href="https://souffletao.substack.com/welcome" target="_blank" class="inline-block bg-stone-800 hover:bg-stone-700 text-white font-medium py-4 px-8 rounded-xl transition-colors duration-300 uppercase tracking-widest text-sm shadow-md">
+                        Récupérer mon Manuscrit
+                    </a>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-stone-200">
+                    <p class="text-xs text-stone-400 italic leading-relaxed">
+                        Votre adresse e-mail est en sécurité.<br>
+                        Souveraine, votre confiance est le socle de notre cercle.<br>
+                        Vos données sont protégées dans notre temple numérique.<br>
+                        Désinscription possible d'un simple souffle.
+                    </p>
+                </div>
+            </div>
+            <!-- FIN DU NOUVEAU BLOC -->
+
+            <!-- Révélation de l'Élément (Juste en dessous) -->
+            <div class="pt-4">
+                <p class="text-sm text-stone-400 uppercase tracking-widest mb-6">Votre Résultat</p>
+                <div id="element-icon" class="text-6xl mb-4"></div>
+                <h2 id="result-title" class="text-3xl mb-4 text-stone-800"></h2>
+                <p id="result-archetype" class="italic text-stone-500 mb-6 font-serif text-lg"></p>
+                <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-8 p-6 bg-white rounded-2xl border border-stone-100 shadow-sm"></div>
+            </div>
+            
+            <div class="border-t border-stone-100 pt-8 mt-4 text-left">
                 <p class="text-sm text-stone-500 mb-2 italic text-center">Ton paysage intérieur se dessine...</p>
                 <h3 class="serif text-2xl mb-4 text-stone-800 text-center">Reçois ton Oracle de Saison complet</h3>
                 
@@ -48,9 +89,6 @@
                     <p class="mb-3">
                         En t'abonnant à mes Chroniques sur <strong>Substack</strong>, tu recevras immédiatement le lien pour télécharger ton PowerPoint 
                         <strong>"L'Éveil de la Souveraine"</strong> (le guide complet des 5 éléments) dans ton mail de bienvenue.
-                    </p>
-                    <p class="text-xs text-stone-400 italic">
-                        Tu rejoins ainsi notre cercle privé. Désinscription possible d'un simple souffle.
                     </p>
                 </div>
 
@@ -264,4 +302,5 @@
     </script>
 </body>
 </html>
+
 
