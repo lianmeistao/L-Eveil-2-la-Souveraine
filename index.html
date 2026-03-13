@@ -35,66 +35,50 @@
             <div id="options-container" class="space-y-4"></div>
         </div>
 
-        <!-- Result Area -->
+        <!-- Result Area (Modifié pour le teasing) -->
         <div id="result-box" class="hidden fade-in text-center">
-            <div id="element-icon" class="text-8xl mb-6 drop-shadow-sm"></div>
-            <h2 id="result-title" class="text-3xl md:text-4xl mb-4 text-stone-800 serif italic"></h2>
-            <p id="result-archetype" class="italic text-stone-500 mb-10 font-serif text-xl"></p>
+            <span class="text-xs uppercase tracking-[0.3em] text-stone-400 mb-4 block">Analyse terminée</span>
+            <div id="element-icon" class="text-6xl mb-4 drop-shadow-sm"></div>
+            <h2 class="text-2xl md:text-3xl mb-2 text-stone-600 serif">Votre synergie énergétique est :</h2>
+            <h2 id="result-title" class="text-4xl md:text-5xl mb-10 text-stone-800 serif italic font-bold"></h2>
             
-            <!-- Scores détaillés -->
-            <div class="mb-12 p-8 bg-stone-50 rounded-[2rem] border border-stone-100 shadow-inner text-left">
-                <h4 class="serif text-xl text-stone-700 mb-6 italic">Votre Signature de Saison :</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm">
-                        <span class="text-[10px] uppercase tracking-widest text-stone-400 block mb-1">Élément Majeur</span>
-                        <p id="dominant-score" class="text-stone-800 font-medium text-lg"></p>
-                    </div>
-                    <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm">
-                        <span class="text-[10px] uppercase tracking-widest text-stone-400 block mb-1">Élément Mineur</span>
-                        <p id="secondary-score" class="text-stone-800 font-medium text-lg"></p>
-                    </div>
-                </div>
-                <p class="text-[11px] text-stone-400 mt-6 italic leading-relaxed">
-                    Votre élément mineur nuance votre profil principal. C'est votre ressource cachée pour retrouver l'équilibre.
-                </p>
+            <!-- Message de teasing (Généré en JS) -->
+            <div id="result-content" class="text-left leading-relaxed mb-12 p-8 bg-stone-50 rounded-[2rem] border border-stone-100 text-lg shadow-inner">
             </div>
-
-            <div id="result-content" class="text-left text-stone-600 leading-relaxed mb-12 p-10 bg-stone-50 rounded-[2rem] border border-stone-100 text-lg"></div>
             
-            <!-- OFFRE MANUSCRIT -->
-            <div class="border-t border-stone-100 pt-12 mt-12 text-center">
-                <h3 class="serif text-2xl mb-6 text-stone-800">Allez plus loin dans votre Éveil</h3>
+            <!-- OFFRE MANUSCRIT (Capture d'email) -->
+            <div class="border-t border-stone-100 pt-10 mt-10 text-center">
+                <h3 class="serif text-2xl mb-6 text-stone-800">Décodez votre synergie secrète</h3>
                 
                 <div class="prestige-box text-stone-100 p-8 md:p-10 rounded-[2.5rem] mb-8 text-left shadow-2xl relative overflow-hidden">
                     <h4 class="serif italic text-2xl mb-4 text-white">Le Manuscrit : « Guide de Renaissance TAO »</h4>
                     <p class="text-sm text-stone-300 mb-8 leading-relaxed">
-                        Pour comprendre l'interaction de vos <strong>deux éléments dominants</strong>, je vous offre mon manuscrit numérique de <strong>14 pages</strong> (PDF) envoyé par e-mail. 
+                        Indiquez votre adresse e-mail sur la page suivante pour recevoir immédiatement votre guide personnalisé de <strong>14 pages</strong> (PDF). 
                     </p>
                     
                     <ul class="text-[11px] space-y-4 mb-10 uppercase tracking-[0.15em] font-light opacity-90 border-l border-stone-600 pl-6">
-                        <li>✦ Analyse croisée de vos 12 réponses</li>
-                        <li>✦ Rituels de Renaissance (Marche & Journaling)</li>
-                        <li>✦ Points d'acupression précis pour votre profil</li>
-                        <li>✦ Le secret de la respiration 4-4-4</li>
+                        <li>✦ La signification profonde de votre synergie</li>
+                        <li>✦ Vos zones d'ombres énergétiques révélées</li>
+                        <li>✦ Rituels de Renaissance sur-mesure</li>
+                        <li>✦ Pratiques TAO et acupression ciblées</li>
                     </ul>
 
-                    <!-- BOUTON D'ACTION CORRIGÉ : Forcer la page de bienvenue Substack -->
+                    <!-- BOUTON D'ACTION : Redirige vers la page Substack pour l'email -->
                     <a href="https://souffletao.substack.com/welcome" 
                        target="_blank" 
-                       class="block w-full bg-stone-100 text-stone-900 text-center py-6 rounded-2xl hover:bg-white transition-all shadow-xl uppercase tracking-[0.25em] text-sm font-bold no-underline">
-                       Récupérer mon Manuscrit
+                       class="block w-full bg-stone-100 text-stone-900 text-center py-6 rounded-2xl hover:bg-white transition-all shadow-xl uppercase tracking-[0.2em] text-sm font-bold no-underline">
+                       Recevoir mon guide par e-mail
                     </a>
                 </div>
 
                 <!-- RÉASSURANCE SÉCURITÉ -->
                 <div class="max-w-md mx-auto space-y-4">
                     <p class="text-xs text-stone-600 font-medium leading-relaxed">
-                        Votre adresse e-mail est en sécurité.
+                        100% gratuit. Votre adresse e-mail est en sécurité.
                     </p>
                     <p class="text-[11px] text-stone-400 leading-relaxed italic opacity-80">
                         Souveraine, votre confiance est le socle de notre cercle. <br>
-                        Vos données sont protégées dans notre temple numérique. <br>
-                        <strong>Désinscription possible d'un simple souffle.</strong>
+                        Désinscription possible d'un simple souffle.
                     </p>
                 </div>
             </div>
@@ -117,12 +101,13 @@
         { q: "12. Si votre âme était un objet précieux aujourd'hui, lequel serait-ce ?", options: [{ t: "Une tige de bambou, flexible et incassable", e: "A" },{ t: "Une flamme libre, dansant librement", e: "B" },{ t: "Une poterie d'argile, façonnée avec amour", e: "C" },{ t: "Un miroir d'argent pur, poli et clair", e: "D" },{ t: "Une perle de nacre au fond de l'océan", e: "E" }] }
     ];
 
+    // NOUVELLE LOGIQUE DE TEASING
     const results = {
-        A: { title: "L'Élan du BOIS", icon: "🌿", label: "Bois", archetype: "La Visionnaire, l'Amazone", content: "Vous portez en vous l'énergie du Printemps, une sève montante qui demande à créer et avancer. <br><br><strong>Vos Rituels :</strong> Libérez vos tensions en massant le point <em>Taichong</em> sur vos pieds et privilégiez les saveurs acidulées pour fluidifier votre Qi." },
-        B: { title: "La Flamme du FEU", icon: "🔥", label: "Feu", archetype: "L'Impératrice, l'Amoureuse", content: "Vous vibrez à la fréquence de l'Été. Vous êtes faite pour la connexion et la joie rayonnante. <br><br><strong>Vos Rituels :</strong> Apaisez votre cœur avec un peu d'amertume noble (cacao noir) et stimulez le point <em>Shenmen</em> pour calmer l'agitation." },
-        C: { title: "Le Socle de la TERRE", icon: "🏺", label: "Terre", archetype: "La Mère Nourricière, la Gardienne", content: "Vous incarnez la stabilité et la récolte. Votre force réside dans votre capacité à soutenir et harmoniser. <br><br><strong>Vos Rituels :</strong> Revenez à vous avec des aliments doux et stimulez le point <em>Zusanli</em> pour renforcer votre ancrage sacré." },
-        D: { title: "Le Joyau du MÉTAL", icon: "✨", label: "Métal", archetype: "L'Alchimiste, la Sage", content: "Vous êtes l'Automne, la quête de l'essentiel et de la pureté. Vous savez trancher pour ne garder que le précieux. <br><br><strong>Vos Rituels :</strong> Respirez avec le point <em>Hegu</em> et misez sur les aliments blancs pour nourrir vos poumons." },
-        E: { title: "La Source de l'EAU", icon: "💧", label: "Eau", archetype: "La Mystique, la Femme Sauvage", content: "Vous portez l'énergie de l'Hiver et de l'intuition profonde. Vous savez écouter le silence. <br><br><strong>Vos Rituels :</strong> Rechargez vos réserves vitales au calme et frictionnez le point <em>Yongquan</em> sous vos pieds." }
+        A: { icon: "🌿", label: "Bois", teasing: "Une force d'expansion naturelle et une vision claire, souvent freinées par une charge mentale invisible. Il est temps d'apprendre à avancer sans t'épuiser." },
+        B: { icon: "🔥", label: "Feu", teasing: "Un rayonnement magnétique et une joie contagieuse, qui demandent à être nourris sans se consumer. Découvre comment canaliser cette intensité." },
+        C: { icon: "🏺", label: "Terre", teasing: "Un pilier nourricier pour les autres et un ancrage profond, qui doit maintenant apprendre à se recevoir et se prioriser elle-même." },
+        D: { icon: "✨", label: "Métal", teasing: "Une clarté d'esprit et une exigence rares, cachant une sensibilité précieuse qu'il te faut maintenant apprendre à protéger." },
+        E: { icon: "💧", label: "Eau", teasing: "Une profondeur, une sagesse et une intuition puissantes, nécessitant de préserver farouchement ton énergie vitale de ce qui te draine." }
     };
 
     let currentQuestion = 0;
@@ -164,6 +149,7 @@
         const resultBox = document.getElementById('result-box');
         resultBox.classList.remove('hidden');
 
+        // Tri des scores pour trouver les 2 dominants
         let sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
         let dom = sorted[0][0];
         let sec = sorted[1][0];
@@ -171,15 +157,20 @@
         const res = results[dom];
         const resSec = results[sec];
 
+        // Affichage des éléments sans tout révéler
         document.getElementById('element-icon').innerText = res.icon;
-        document.getElementById('result-title').innerText = res.title;
-        document.getElementById('result-archetype').innerText = res.archetype;
-        document.getElementById('result-content').innerHTML = res.content;
+        document.getElementById('result-title').innerText = `${res.label} & ${resSec.label}`;
 
-        document.getElementById('dominant-score').innerText = res.label + " (" + sorted[0][1] + " réponses)";
-        document.getElementById('secondary-score').innerText = resSec.label + " (" + sorted[1][1] + " réponses)";
+        // Création du bloc de teasing
+        const teasingHTML = `
+            <p class="text-xl text-stone-700 font-serif italic mb-6">« ${res.teasing} »</p>
+            <p class="text-stone-600 mb-4 text-base">La combinaison <strong>${res.label} - ${resSec.label}</strong> est une synergie énergétique unique. Elle porte en elle une puissance insoupçonnée, mais aussi une zone d'ombre silencieuse.</p>
+            <p class="text-stone-800 font-medium text-base">Pour comprendre comment ces deux forces interagissent réellement en vous, j'ai préparé votre analyse complète.</p>
+        `;
+        document.getElementById('result-content').innerHTML = teasingHTML;
     }
     loadQuestion();
 </script>
 </body>
 </html>
+
