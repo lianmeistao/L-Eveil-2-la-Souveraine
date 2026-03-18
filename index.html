@@ -3,60 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Éveil de la Souveraine - Diagnostic</title>
+    <title>L'Éveil de la Souveraine 🌿</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fcfaf7; }
         .font-serif { font-family: 'Cinzel', serif; }
+        .bg-imperial { background-color: #f4eee0; } /* Couleur sable doux */
+        .text-gold { color: #b08d57; } /* Or sourd */
+        .border-gold { border-color: #d4af37; }
+        .btn-noble { background-color: #2c2c2c; color: #f4eee0; transition: all 0.3s; }
+        .btn-noble:hover { background-color: #b08d57; transform: translateY(-2px); }
     </style>
 </head>
-<body class="bg-stone-100 text-stone-800 min-h-screen">
+<body class="text-stone-800 min-h-screen">
 
     <div class="max-w-4xl mx-auto py-12 px-4">
         <header class="text-center mb-12">
-            <h1 class="font-serif text-3xl md:text-5xl text-stone-900 tracking-widest uppercase mb-4">L'Éveil de la Souveraine</h1>
-            <div class="h-px w-24 bg-stone-400 mx-auto mb-6"></div>
-            <p class="italic text-stone-600 font-light text-sm md:text-base tracking-wide">Diagnostic des 5 Forces Vitales</p>
+            <h1 class="font-serif text-3xl md:text-5xl text-stone-900 tracking-widest uppercase mb-4">
+                🌿 L'Éveil de la Souveraine
+            </h1>
+            <div class="h-px w-32 bg-gold mx-auto mb-6" style="background-color: #b08d57;"></div>
+            <p class="italic text-stone-600 font-light text-lg tracking-wide">L'Oracle des 5 Forces Vitales</p>
         </header>
 
-        <div id="quiz-container" class="bg-white p-8 md:p-12 shadow-sm border border-stone-200 transition-all">
-            <div id="progress-bar" class="w-full h-1 bg-stone-100 mb-8">
-                <div id="progress" class="h-full bg-stone-800 transition-all duration-500" style="width: 0%"></div>
+        <div id="quiz-container" class="bg-white p-8 md:p-12 shadow-xl border border-stone-100 rounded-sm">
+            <div id="progress-bar" class="w-full h-1 bg-stone-100 mb-10">
+                <div id="progress" class="h-full bg-stone-800 transition-all duration-700" style="width: 0%"></div>
             </div>
             <div id="question-box">
-                <h2 id="question-text" class="font-serif text-2xl mb-8 leading-relaxed text-stone-900 text-center">Préparation du voyage...</h2>
-                <div id="options" class="grid gap-4"></div>
+                <h2 id="question-text" class="font-serif text-2xl mb-10 leading-relaxed text-stone-900 text-center italic">Préparation du voyage...</h2>
+                <div id="options" class="grid gap-6"></div>
             </div>
         </div>
 
-        <div id="result-box" class="hidden max-w-2xl mx-auto text-center py-12 px-6 bg-stone-50 border border-stone-200 rounded-lg shadow-sm">
+        <div id="result-box" class="hidden max-w-2xl mx-auto text-center py-12 px-8 bg-imperial border border-gold rounded-lg shadow-2xl">
             
-            <h2 class="font-serif text-2xl text-stone-500 mb-6 uppercase tracking-widest italic">Diagnostic Établi</h2>
+            <h2 class="font-serif text-xl text-stone-500 mb-6 uppercase tracking-widest italic text-gold">Le voile se lève...</h2>
             
-            <div class="mb-10 p-8 border-y border-stone-200 bg-white shadow-inner">
-                <p class="text-stone-400 mb-4 font-serif uppercase text-sm tracking-widest">Votre Sceau Dominant est le :</p>
-                <h2 id="sceau-reveal" class="font-serif text-6xl text-stone-900 mb-4">...</h2>
-                <p class="text-stone-500 italic font-light tracking-wide">Gardez précieusement ce chiffre pour décoder votre profil.</p>
+            <div class="mb-12 p-8 bg-white/50 border-y border-stone-200 shadow-inner">
+                <p class="text-stone-600 mb-6 font-light text-lg italic" id="poetic-summary"></p>
+                <p class="text-stone-400 mb-2 font-serif uppercase text-xs tracking-[0.3em]">Votre élément dominant est représenté par le :</p>
+                <h2 id="sceau-reveal" class="font-serif text-5xl text-stone-900 mb-4 tracking-tighter uppercase">...</h2>
+                <p class="text-stone-500 italic font-light tracking-wide text-sm">Gardez précieusement ce chiffre pour décoder votre profil à la Cour.</p>
             </div>
 
-            <div class="p-4">
-                <h3 class="font-serif text-2xl text-stone-900 mb-6">Récupérez votre Clé de Décodage</h3>
-                <p class="text-stone-700 mb-10 leading-relaxed font-light text-lg">
+            <div class="space-y-8">
+                <h3 class="font-serif text-2xl text-stone-900">Récupérez votre Clé de Décodage</h3>
+                <p class="text-stone-700 leading-relaxed font-light text-lg px-4">
                     Souveraine, votre Sceau révèle l'essence de votre puissance actuelle. Entrez votre e-mail sur la page suivante pour recevoir la <strong>Clé de Décodage</strong> et votre <strong>Guide de Renaissance (14 pages)</strong>.
                 </p>
 
                 <a href="https://souffletao.substack.com/welcome" 
-                   class="inline-block w-full sm:w-auto bg-stone-800 text-stone-50 px-12 py-5 rounded-none font-serif tracking-widest hover:bg-stone-700 transition-all duration-300 uppercase text-sm shadow-xl">
+                   class="inline-block w-full sm:w-auto btn-noble px-14 py-5 rounded-none font-serif tracking-widest uppercase text-sm shadow-xl">
                     OBTENIR MON DÉCODAGE
                 </a>
-                <p class="mt-8 text-xs text-stone-400 italic tracking-wide">Accès immédiat • 100% Gratuit</p>
+                <p class="mt-8 text-xs text-stone-400 italic tracking-widest">Accès immédiat • 100% Gratuit</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Association : 1=Bois, 2=Feu, 3=Terre, 4=Métal, 5=Eau
         const questions = [
             { text: "1. Face à un nouveau projet ambitieux, quel est votre premier élan ?", options: [{ text: "Tracer une vision claire et passer à l'action.", val: 1 },{ text: "Partager l'enthousiasme et inspirer les autres.", val: 2 },{ text: "Poser les bases et assurer la stabilité du groupe.", val: 3 },{ text: "Structurer chaque détail avec précision.", val: 4 },{ text: "Écouter mon intuition et laisser le projet mûrir.", val: 5 }]},
             { text: "2. Dans un moment de stress intense, comment réagissez-vous ?", options: [{ text: "Je m'impatiente et je veux trancher vite.", val: 1 },{ text: "Mes émotions débordent, j'ai besoin de m'exprimer.", val: 2 },{ text: "Je m'inquiète pour les autres et je m'oublie.", val: 3 },{ text: "Je me replie sur moi-même pour tout contrôler.", val: 4 },{ text: "Je me fige et je m'isole dans mes pensées.", val: 5 }]},
@@ -76,6 +83,14 @@
             { text: "16. Rapport au corps ?", options: [{ text: "Mouvement.", val: 1 },{ text: "Sensations.", val: 2 },{ text: "Temple.", val: 3 },{ text: "Pureté.", val: 4 },{ text: "Réceptacle.", val: 5 }]}
         ];
 
+        const summaries = {
+            1: "Comme le jeune bambou, vous possédez la force de la vision et l'élan de la croissance.",
+            2: "Comme le soleil à son zénith, vous rayonnez de joie et d'une inspiration contagieuse.",
+            3: "Comme la terre nourricière, vous incarnez l'harmonie, le soutien et la stabilité.",
+            4: "Comme le sabre de justice, vous possédez la clarté du discernement et le sens de l'ordre.",
+            5: "Comme l'océan profond, vous portez en vous une sagesse silencieuse et une intuition infinie."
+        };
+
         let currentQuestion = 0;
         let scores = { 1:0, 2:0, 3:0, 4:0, 5:0 };
 
@@ -86,7 +101,7 @@
             optionsDiv.innerHTML = '';
             q.options.forEach(opt => {
                 const btn = document.createElement('button');
-                btn.className = "w-full py-4 px-6 text-left border border-stone-200 hover:border-stone-800 hover:bg-stone-50 transition-all font-light text-stone-700";
+                btn.className = "w-full py-5 px-6 text-left border border-stone-200 hover:border-stone-800 hover:bg-stone-50 transition-all font-light text-stone-700 bg-white/50";
                 btn.innerText = opt.text;
                 btn.onclick = () => selectOption(opt.val);
                 optionsDiv.appendChild(btn);
@@ -105,9 +120,9 @@
             const resultBox = document.getElementById('result-box');
             resultBox.classList.remove('hidden');
 
-            // Calcul du sceau gagnant
             let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-            document.getElementById('sceau-reveal').innerText = "Sceau n°" + winner;
+            document.getElementById('sceau-reveal').innerText = "Sceau Impérial n°" + winner;
+            document.getElementById('poetic-summary').innerText = summaries[winner];
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
