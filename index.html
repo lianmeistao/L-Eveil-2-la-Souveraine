@@ -76,6 +76,12 @@
             background-color: var(--gold);
             transform: scale(1.02);
         }
+
+        .sceau-badge {
+            border: 1px solid var(--gold);
+            padding: 1rem;
+            background: white;
+        }
     </style>
 </head>
 <body class="text-stone-800">
@@ -100,38 +106,48 @@
             </div>
         </div>
 
-        <div id="result-box" class="hidden max-w-2xl mx-auto text-center py-16 px-10 bg-imperial border-double border-4 border-gold rounded-none shadow-2xl fade-in" style="background-color: #f4eee0;">
+        <div id="result-box" class="hidden max-w-3xl mx-auto text-center py-16 px-6 md:px-10 bg-imperial border-double border-4 border-gold rounded-none shadow-2xl fade-in" style="background-color: #f4eee0;">
             <h2 class="font-serif text-xl text-stone-500 mb-8 uppercase tracking-[0.3em] italic">Analyse terminée</h2>
             
-            <div class="mb-14 p-10 bg-white/70 border-y border-stone-200 shadow-inner">
-                <p class="text-stone-700 mb-3 font-serif uppercase text-[11px] tracking-[0.4em] font-bold">Votre nature profonde a révélé le :</p>
-                <h2 id="sceau-reveal" class="font-serif text-4xl md:text-6xl text-stone-900 mb-4 tracking-tighter uppercase">...</h2>
-                <p class="text-stone-800 italic font-bold tracking-wide text-xs">Gardez précieusement ce chiffre pour obtenir votre profil complet.</p>
+            <div class="mb-14 p-6 md:p-10 bg-white/70 border-y border-stone-200 shadow-inner">
+                <p class="text-stone-700 mb-6 font-serif uppercase text-[11px] tracking-[0.4em] font-bold">Votre dualité souveraine a parlé :</p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+                    <div class="sceau-badge w-full md:w-1/2">
+                        <p class="text-[10px] uppercase font-bold text-gold tracking-widest mb-1">Sceau de Nature (Dominant)</p>
+                        <h2 id="sceau-1" class="font-serif text-3xl text-stone-900 uppercase">...</h2>
+                    </div>
+                    <div class="sceau-badge w-full md:w-1/2 border-dashed">
+                        <p class="text-[10px] uppercase font-bold text-stone-400 tracking-widest mb-1">Sceau de Résonance (Secondaire)</p>
+                        <h2 id="sceau-2" class="font-serif text-3xl text-stone-900 uppercase">...</h2>
+                    </div>
+                </div>
+
+                <p class="text-stone-800 italic font-bold tracking-wide text-xs">Notez ces deux chiffres pour décoder la synergie de vos forces.</p>
             </div>
 
             <div class="space-y-10">
-                <h3 class="font-serif text-2xl text-stone-900 uppercase tracking-widest">Récupérez votre Clé de Décodage</h3>
+                <h3 class="font-serif text-2xl text-stone-900 uppercase tracking-widest">Récupérez votre Clé de Synergie</h3>
                 <div class="text-stone-700 leading-relaxed font-light text-lg px-4 space-y-4 text-left">
                     <p>
-                        Souveraine, votre Sceau révèle l'essence de votre puissance actuelle. 
-                        Comprendre votre élément dominant est la première étape pour mieux vous connaître et adapter précisément les rituels de votre Guide. 
+                        Souveraine, vous n'êtes pas faite d'un seul bloc. L'interaction entre votre <strong>Sceau de Nature</strong> et votre <strong>Sceau de Résonance</strong> crée une alchimie qui vous est propre.
                     </p>
                     <p class="italic text-base text-stone-800 font-bold">
-                        C'est en harmonisant vos exercices avec votre nature profonde que vous commencerez à retrouver un équilibre souverain et une énergie vibrante.
+                        Dans votre Guide, nous irons au-delà des généralités pour affiner vos rituels selon cette double signature élémentaire.
                     </p>
                     <p class="pt-4">
-                        Confiez-nous votre e-mail pour recevoir votre <strong>Clé de Décodage</strong> ainsi que votre <strong>Guide de Renaissance (14 pages)</strong> : rituels, nutrition ancestrale et secrets de lignée.
+                        Entrez votre adresse pour recevoir votre <strong>Clé de Décodage</strong> personnalisée et votre <strong>Guide de Renaissance (14 pages)</strong> complet :
                     </p>
                 </div>
 
                 <a href="https://souffletao.substack.com/welcome" 
                    class="inline-block w-full sm:w-auto btn-final px-16 py-6 rounded-none font-serif text-sm uppercase shadow-2xl">
-                    OBTENIR MA CLÉ ET MON GUIDE
+                    RECEVOIR MA CLÉ ET MON GUIDE
                 </a>
                 
                 <div class="pt-6">
-                    <p class="text-[11px] text-stone-800 tracking-[0.2em] uppercase font-bold">Accès immédiat • 100% Gratuit</p>
-                    <p class="text-[10px] text-stone-600 italic mt-2 tracking-widest uppercase font-bold">Zéro Spam. Désinscription en un souffle.</p>
+                    <p class="text-[11px] text-stone-800 tracking-[0.2em] uppercase font-bold">Accès immédiat aux secrets de lignée • 100% Gratuit</p>
+                    <p class="text-[10px] text-stone-600 italic mt-2 tracking-widest uppercase font-bold font-bold">Zéro Spam. Désinscription en un souffle.</p>
                 </div>
             </div>
         </div>
@@ -153,98 +169,112 @@
                 { text: "Une analyse froide : je cherche la faille logique pour trancher le problème.", val: 4 },
                 { text: "Un retrait dans mon temple intérieur pour observer la marée passer.", val: 5 }
             ]},
-            { text: "3. Quel objet précieux symboliserait le mieux votre héritage naturel ?", options: [
+            { text: "3. Quelle partie d'un projet vous passionne le plus ?", options: [
+                { text: "L'élan du début, l'idée qui jaillit et la mise en mouvement.", val: 1 },
+                { text: "Le partage et la célébration quand le projet rayonne enfin.", val: 2 },
+                { text: "La phase de consolidation, où l'on construit du concret et du solide.", val: 3 },
+                { text: "Le moment de la finition, où l'on épure et amène à la perfection.", val: 4 },
+                { text: "La phase de réflexion silencieuse, où l'on sonde les profondeurs du possible.", val: 5 }
+            ]},
+            { text: "4. Quel objet précieux symboliserait le mieux votre héritage naturel ?", options: [
                 { text: "Le Sceptre de Jade, symbole de croissance et de vision nouvelle.", val: 1 },
                 { text: "La Lanterne de Rubis, qui inspire et réchauffe les cœurs.", val: 2 },
                 { text: "La Jarre de Terre Cuite, contenant la stabilité et la nourriture.", val: 3 },
                 { text: "Le Miroir d'Argent, qui discerne l'essentiel et reflète la vérité.", val: 4 },
                 { text: "La Perle de Nacre, trésor silencieux né du secret des abysses.", val: 5 }
             ]},
-            { text: "4. Quelle saveur réveille instantanément vos sens ?", options: [
+            { text: "5. Quelle saveur réveille instantanément vos sens ?", options: [
                 { text: "L'Acidulé, vif et piquant comme une renaissance printanière.", val: 1 },
                 { text: "L'Amertume, profonde et complexe comme un feu sacré.", val: 2 },
                 { text: "Le Doux, sucré et enveloppant comme une terre nourricière.", val: 3 },
                 { text: "Le Âcre ou le poivré, net et tranchant comme un métal pur.", val: 4 },
                 { text: "Le Salé, profond et mystérieux comme l'eau des océans.", val: 5 }
             ]},
-            { text: "5. À quel moment de la journée vous sentez-vous le plus en majesté ?", options: [
+            { text: "6. À quel moment de la journée vous sentez-vous le plus en majesté ?", options: [
                 { text: "À l'Aube, quand tout est possible et que l'élan s'éveille.", val: 1 },
                 { text: "À Midi, quand ma présence est éclatante au zénith de l'action.", val: 2 },
                 { text: "L'Après-midi, quand je stabilise mes acquis et nourris mes liens.", val: 3 },
                 { text: "Au Crépuscule, quand je fais le tri et que je simplifie mon esprit.", val: 4 },
                 { text: "Au milieu de la Nuit, dans le calme absolu de ma propre écoute.", val: 5 }
             ]},
-            { text: "6. Quelle sensation tactile préférez-vous sous vos doigts ?", options: [
+            { text: "7. Lorsque la fatigue vous gagne, où se loge la tension dans votre corps ?", options: [
+                { text: "Dans la nuque et les trapèzes, comme un carcan qui m'emprisonne.", val: 1 },
+                { text: "Au niveau de la poitrine, comme une oppression qui m'empêche de respirer.", val: 2 },
+                { text: "Au niveau du plexus ou de l'estomac, comme un nœud qui ne se délie pas.", val: 3 },
+                { text: "Dans les épaules ou le haut du dos, comme une armure trop lourde.", val: 4 },
+                { text: "Dans les reins ou le bas du dos, comme une perte de soutien vital.", val: 5 }
+            ]},
+            { text: "8. Quelle sensation tactile préférez-vous sous vos doigts ?", options: [
                 { text: "Le contact du bois vivant, robuste, nervuré et plein de sève.", val: 1 },
                 { text: "La chaleur d'une flamme ou d'un tissu soyeux, vibrant et solaire.", val: 2 },
                 { text: "La densité de l'argile ou du velours, stable, riche et protectrice.", val: 3 },
                 { text: "Le froid d'un métal poli ou d'une pierre précieuse impeccable.", val: 4 },
                 { text: "La fluidité de l'eau ou d'une soie fraîche et insaisissable.", val: 5 }
             ]},
-            { text: "7. Comment l'impulsion de vos projets naît-elle dans votre quotidien ?", options: [
+            { text: "9. Comment l'impulsion de vos projets naît-elle dans votre quotidien ?", options: [
                 { text: "Par une vision claire et une volonté de conquérir de nouveaux horizons.", val: 1 },
                 { text: "Par une étincelle de passion, un élan irrésistible du cœur.", val: 2 },
                 { text: "Par le désir de bâtir un foyer solide et une sécurité durable.", val: 3 },
                 { text: "Par un besoin de structure, de justice et de clarté morale.", val: 4 },
                 { text: "Par une intuition profonde qui émerge du silence méditatif.", val: 5 }
             ]},
-            { text: "8. Quelle est la texture de votre énergie créative ?", options: [
+            { text: "10. Quelle est la texture de votre énergie créative ?", options: [
                 { text: "Un bourgeonnement permanent, une invention sans cesse renouvelée.", val: 1 },
                 { text: "Un rayonnement qui cherche à célébrer la beauté du monde.", val: 2 },
                 { text: "Une construction patiente, concrète et nourricière.", val: 3 },
                 { text: "Une quête de perfection, de la forme pure et du dépouillement.", val: 4 },
                 { text: "Un chant mystérieux qui remonte des profondeurs de mon âme.", val: 5 }
             ]},
-            { text: "9. De quelle manière votre corps exprime-t-il sa puissance ?", options: [
+            { text: "11. De quelle manière votre corps exprime-t-il sa puissance ?", options: [
                 { text: "Par un besoin de mouvement vif, d'étirement et de souplesse.", val: 1 },
                 { text: "Par une vibration joyeuse qui aime danser avec l'énergie ambiante.", val: 2 },
                 { text: "Par une force tranquille, préférant la lenteur et la solidité du pas.", val: 3 },
                 { text: "Par une discipline précise, cherchant le geste pur et efficace.", val: 4 },
                 { text: "Par une résistance fluide, capable de s'adapter à toutes les pressions.", val: 5 }
             ]},
-            { text: "10. Comment scellez-vous une décision qui engage votre destin ?", options: [
+            { text: "12. Comment scellez-vous une décision qui engage votre destin ?", options: [
                 { text: "Je tranche avec assurance, portée par mes instincts de guide.", val: 1 },
                 { text: "Je suis les élans de mon cœur, cherchant l'éclat du moment.", val: 2 },
                 { text: "Je temporise, cherchant l'harmonie et l'équilibre du groupe.", val: 3 },
                 { text: "Je soupèse chaque grain de vérité avec une rigueur absolue.", val: 4 },
                 { text: "Je sonde l'invisible, attendant que le courant me guide.", val: 5 }
             ]},
-            { text: "11. Qu'est-ce qui vient flétrir votre éclat intérieur ?", options: [
+            { text: "13. Qu'est-ce qui vient flétrir votre éclat intérieur ?", options: [
                 { text: "L'inaction forcée ou de devoir attendre après les autres.", val: 1 },
                 { text: "Le froid de l'indifférence et le manque de chaleur humaine.", val: 2 },
                 { text: "L'instabilité émotionnelle et le changement perpétuel.", val: 3 },
                 { text: "Le chaos, le désordre ou l'absence de sens éthique.", val: 4 },
                 { text: "Le bruit incessant qui brouille ma communication avec moi-même.", val: 5 }
             ]},
-            { text: "12. Face à une loi ou une autorité, quelle est votre posture ?", options: [
+            { text: "14. Face à une loi ou une autorité, quelle est votre posture ?", options: [
                 { text: "Je m'affirme : mon esprit de liberté ne supporte aucune entrave.", val: 1 },
                 { text: "Je cherche à charmer pour fluidifier les rapports de force.", val: 2 },
                 { text: "Je m'adapte pour préserver la paix et la solidité de mon foyer.", val: 3 },
                 { text: "Je respecte les règles si elles sont dictées par la raison pure.", val: 4 },
                 { text: "Je reste insaisissable, gardant ma propre loi en mon for intérieur.", val: 5 }
             ]},
-            { text: "13. Comment vos émotions traversent-elles votre temple ?", options: [
+            { text: "15. Comment vos émotions traversent-elles votre temple ?", options: [
                 { text: "Par des jaillissements de colère vive qui demandent à s'exprimer.", val: 1 },
                 { text: "Par des vagues de passion intense qui cherchent à être partagées.", val: 2 },
                 { text: "Par des ruminations lentes, comme une terre qui garde ses secrets.", val: 3 },
                 { text: "Par un contrôle souverain, privilégiant la dignité et la réserve.", val: 4 },
                 { text: "Par des courants profonds que peu de gens parviennent à lire.", val: 5 }
             ]},
-            { text: "14. Quel rapport entretenez-vous avec le sablier du temps ?", options: [
+            { text: "16. Quel rapport entretenez-vous avec le sablier du temps ?", options: [
                 { text: "Je cherche à le devancer, toujours impatiente de voir demain.", val: 1 },
                 { text: "Je savoure l'instant présent, là où le feu de la vie est vif.", val: 2 },
                 { text: "Je respecte les cycles lents, aimant la régularité des jours.", val: 3 },
                 { text: "Je l'optimise avec précision, fuyant tout gaspillage inutile.", val: 4 },
                 { text: "Je m'en détache, préférant l'éternité du rêve au tic-tac du monde.", val: 5 }
             ]},
-            { text: "15. De quoi votre âme a-t-elle le plus soif pour s'épanouir ?", options: [
+            { text: "17. De quoi votre âme a-t-elle le plus soif pour s'épanouir ?", options: [
                 { text: "De liberté, de nouveaux défis et d'espace pour croître.", val: 1 },
                 { text: "D'amour, de reconnaissance et de résonance avec autrui.", val: 2 },
                 { text: "De stabilité, de sécurité et d'un ancrage terrestre immuable.", val: 3 },
                 { text: "De vérité, de justice et d'une structure de vie impeccable.", val: 4 },
                 { text: "De silence, de mystère et de temps pour la contemplation.", val: 5 }
             ]},
-            { text: "16. Quel rôle incarnez-vous dans la trame de l'Empire ?", options: [
+            { text: "18. Quel rôle incarnez-vous dans la trame de l'Empire ?", options: [
                 { text: "L'Impulsion : celle qui initie le mouvement et trace le sentier.", val: 1 },
                 { text: "L'Inspiration : celle qui apporte la lumière, le rire et l'éclat.", val: 2 },
                 { text: "La Gardienne : celle qui assure la pérennité et le confort.", val: 3 },
@@ -288,8 +318,14 @@
             const resultBox = document.getElementById('result-box');
             resultBox.classList.remove('hidden');
 
-            let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-            document.getElementById('sceau-reveal').innerText = "Sceau Impérial n°" + winner;
+            // Calcul des gagnants
+            let sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            
+            let winner1 = sortedScores[0][0];
+            let winner2 = sortedScores[1][0];
+
+            document.getElementById('sceau-1').innerText = "Sceau n°" + winner1;
+            document.getElementById('sceau-2').innerText = "Sceau n°" + winner2;
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
